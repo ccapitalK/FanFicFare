@@ -22,6 +22,7 @@ from ..exceptions import FailedToDownload
 
 from writer_html import HTMLWriter
 from writer_txt  import TextWriter
+from writer_md   import MarkdownWriter
 from writer_epub import EpubWriter
 from writer_mobi import MobiWriter
 
@@ -30,6 +31,8 @@ def getWriter(type,config,story):
         return HTMLWriter(config,story)
     if type == "txt":
         return TextWriter(config,story)
+    if type == "markdown":
+        return MarkdownWriter(config,story)
     if type == "epub":
         return EpubWriter(config,story)
     if type == "mobi":
